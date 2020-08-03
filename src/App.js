@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          LOL cont integeration
+          confirm working
         </a>
       </header>
     </div>
