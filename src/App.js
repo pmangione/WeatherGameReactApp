@@ -17,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          confirm working August 4th 10AM
+          confirm working August 4th Noon
         </a>
       </header>
     </div>
