@@ -1,5 +1,5 @@
-import React from 'react';
-//import React, { useState } from 'react';
+//import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -17,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          confirm working August 4th 10AM
+          confirm working August 4th 10AM does new react libr work?
         </a>
       </header>
     </div>
