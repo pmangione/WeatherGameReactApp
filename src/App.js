@@ -3,7 +3,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function WeatherGame() {
   return (
     <div className="App">
       <header className="App-header">
@@ -17,14 +17,14 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          confirm working August 4th Noon
+          confirm working August 4th 89PM
         </a>
       </header>
     </div>
   );
 }
 
-export default App;
+export default WeatherGame;
 
 
 
