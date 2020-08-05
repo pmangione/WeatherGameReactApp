@@ -1,5 +1,18 @@
-import React from 'react';
+//import React from 'react';
 //import React, { useState } from 'react';
+
+import react from 'react';
+import reactDom from 'react-dom';
+
+commonjs({
+  include: 'node_modules/**',
+  namedExports: {
+    react: Object.keys(react),
+    'react-dom': Object.keys(reactDom)
+  }
+})
+
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -17,7 +30,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          confirm working August 4th 10AM does new react libr work?
+          confirm working August 4th 8PM Work?
         </a>
       </header>
     </div>
