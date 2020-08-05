@@ -1,17 +1,5 @@
-//import React from 'react';
+import React from 'react';
 //import React, { useState } from 'react';
-
-import react from 'react';
-import reactDom from 'react-dom';
-
-commonjs({
-  include: 'node_modules/**',
-  namedExports: {
-    react: Object.keys(react),
-    'react-dom': Object.keys(reactDom)
-  }
-})
-
 
 import logo from './logo.svg';
 import './App.css';
