@@ -99,7 +99,7 @@ const WeatherGame = (props) => {
 
 
       <div className="right">
-
+        <p>On average, which city has more precipitation per year?</p>
 
         {utils.displayCitiesInPlay(citiesInPlay).map(cityNameFromCitiesInPlay =>
           <City cityName={cityNameFromCitiesInPlay} status={cityStatus} onClick={onCityClick} />
@@ -114,7 +114,7 @@ const WeatherGame = (props) => {
           <div>
             <p>{correctOrIncorrectMessage(selectedCity)}</p>
             {utils.displayCitiesInPlay(citiesInPlay).map(cityNameFromCitiesInPlay =>
-              <p>{cityNameFromCitiesInPlay} has {citiesInPlay[cityNameFromCitiesInPlay]} inches of rain annually.</p>
+              <p>{cityNameFromCitiesInPlay} has {citiesInPlay[cityNameFromCitiesInPlay]} inches of precipitation annually.</p>
             )
             }
 
