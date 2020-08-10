@@ -114,7 +114,7 @@ const WeatherGame = (props) => {
           <td>
 
             <tr>
-              <img src={Denver} alt="Denver Image" height={150} width={150} />
+              <img src={Denver} alt="Denver Image" height={150} width={150} class="responsive" />
             </tr>
             <tr>
               <City cityName={cityNameFromCitiesInPlay} status={cityStatus} onClick={onCityClick} />
