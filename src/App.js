@@ -4,11 +4,13 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { createPortal } from 'react-dom';
+import Denver from './Images/Denver.jpg'
 
+//<img src={Denver} alt="Denver Image" height={100} width={100} />
 
 
 const City = props => (
-  <button style={{ backgroundColor: colors[props.status(props.cityName)] }}
+  <button style={{ backgroundColor: colors[props.status(props.cityName)], width: "100" }}
     onClick={() => props.onClick(props.cityName)}
   >
     {props.cityName}
@@ -94,46 +96,98 @@ const WeatherGame = (props) => {
 
 
   return (
-    <div>
 
 
+    <React.Fragment>
 
-      <div className="right">
+
+      <div class="div">
         <p>On average, which city has more precipitation per year?</p>
 
-        {utils.displayCitiesInPlay(citiesInPlay).map(cityNameFromCitiesInPlay =>
-          <City cityName={cityNameFromCitiesInPlay} status={cityStatus} onClick={onCityClick} />
-        )
-        }
       </div>
 
 
 
-      <div>
+      <table class="table">
+
+        {utils.displayCitiesInPlay(citiesInPlay).map(cityNameFromCitiesInPlay =>
+          <td>
+
+            <tr>
+              <img src={Denver} alt="Denver Image" height={150} width={150} />
+            </tr>
+            <tr>
+              <City cityName={cityNameFromCitiesInPlay} status={cityStatus} onClick={onCityClick} />
+            </tr>
+
+          </td>
+        )
+        }
+
+
+      </table>
+
+      <table>
+
         {selectedCity ?
-          <div>
-            <p>{correctOrIncorrectMessage(selectedCity)}</p>
+
+          <React.Fragment>
+            <tr>
+              <td>
+                {correctOrIncorrectMessage(selectedCity)}
+              </td>
+            </tr>
+
+
             {utils.displayCitiesInPlay(citiesInPlay).map(cityNameFromCitiesInPlay =>
-              <p>{cityNameFromCitiesInPlay} has {citiesInPlay[cityNameFromCitiesInPlay]} inches of precipitation annually.</p>
+              <tr><td>{cityNameFromCitiesInPlay} has {citiesInPlay[cityNameFromCitiesInPlay]} inches of precipitation annually.</td></tr>
             )
             }
 
+
+
+
+
             {(gameStatus == 'active') ?
-              <div>
-                <p>questions answered: {numberAnswered}</p><p>correct answers: {numberCorrectAnswered}</p>
-                <p><NextQuestion onClick={onNextQuestionClick} /></p>
-              </div> : <b></b>
+              <React.Fragment>
+                <tr><td>questions answered: {numberAnswered}</td></tr>
+                <tr><td>correct answers: {numberCorrectAnswered}</td></tr>
+                <tr><td><NextQuestion onClick={onNextQuestionClick} /></td></tr>
+              </React.Fragment> : <b></b>
             }
 
-          </div> : <p></p>}
-      </div>
-      {gameStatus !== 'active' ?
-        <div><p style={{ backgroundColor: colors['gameoverornextquestion'] }}>GAME OVER!</p> <p> Final Score </p>
-          <p>Correct answers: {numberCorrectAnswered}</p>
-          <p>Total questions: {numberAnswered}</p>
-          <p>Percentage Correct: {utils.percentage(numberCorrectAnswered, numberAnswered)}%</p>
-          <p><PlayAgain onClick={props.startNewGame} /></p></div> : <b></b>
-      }</div>
+          </React.Fragment>
+
+
+          : <b></b>
+        }
+
+
+        {gameStatus !== 'active' ?
+          <React.Fragment>
+            <tr><td>GAME OVER!</td></tr>
+            <tr><td>Final Score </td></tr>
+
+            <tr><td>Correct answers: {numberCorrectAnswered}</td></tr>
+
+            <tr><td>Total questions: {numberAnswered}</td></tr>
+
+            <tr><td>Percentage Correct: {utils.percentage(numberCorrectAnswered, numberAnswered)}%</td></tr>
+
+            <tr><td><PlayAgain onClick={props.startNewGame} /></td></tr>
+          </React.Fragment>
+          : <b></b>
+        }
+
+
+
+
+      </table>
+
+
+
+
+    </React.Fragment>
 
   );
 }
