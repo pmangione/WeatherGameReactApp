@@ -12,14 +12,16 @@ code {
     monospace;
 }
 
-
+/*
 table {
   width: 30%;
   height: 30%;
   margin-left: 5%;
   table-layout: fixed;
-  /* border-spacing: 0.5px 10px; */
+  /*border-spacing: 0.1px 10px; 
+  border-spacing: 1%;
 }
+*/
 
 
 div {
@@ -28,7 +30,3 @@ div {
   
 }
 
-responsive {
-  max-width: 100%;
-  height: auto;
-}

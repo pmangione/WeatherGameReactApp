@@ -6,15 +6,30 @@ import './App.css';
 import { createPortal } from 'react-dom';
 import Denver from './Images/Denver.jpg'
 
+//import Button from 'react-bootstrap/Button'
+//import Image from 'react-bootstrap/Image'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 //<img src={Denver} alt="Denver Image" height={100} width={100} />
+
+import { Container, Button, Image, Table, Row, Col } from 'react-bootstrap'
 
 
 const City = props => (
+  /*
   <button style={{ backgroundColor: colors[props.status(props.cityName)], width: "100" }}
     onClick={() => props.onClick(props.cityName)}
   >
     {props.cityName}
   </button>
+  */
+  <Button style={{ backgroundColor: colors[props.status(props.cityName)] }} className="btn btn-sm btn-block"
+
+    onClick={() => props.onClick(props.cityName)}
+  >
+    {props.cityName}
+  </Button>
+
 );
 
 
@@ -107,25 +122,42 @@ const WeatherGame = (props) => {
       </div>
 
 
+      {/*}
+      <Container className="container border ml-1">
+        <Row>
+          <Col xs={3}><Image src={Denver} height="80%" width="80%" className="img-fluid"></Image>
+            <Row>Denver</Row>
+          </Col>
+          <Col xs={3}><Image src={Denver} height="80%" width="80%" className="img-fluid"></Image>
+            <Row>Denver</Row>
+          </Col>
+          <Col>3 of 3</Col>
+        </Row>
+        </Container>
 
-      <table class="table">
+  */}
 
-        {utils.displayCitiesInPlay(citiesInPlay).map(cityNameFromCitiesInPlay =>
-          <td>
-
-            <tr>
-              <img src={Denver} alt="Denver Image" height={150} width={150} class="responsive" />
-            </tr>
-            <tr>
-              <City cityName={cityNameFromCitiesInPlay} status={cityStatus} onClick={onCityClick} />
-            </tr>
-
-          </td>
-        )
-        }
+      {/*<Container className="container border ml-1">*/}
+      <Container className="container border ml-0 pl-0">
+        <Row>
+          {utils.displayCitiesInPlay(citiesInPlay).map(cityNameFromCitiesInPlay =>
 
 
-      </table>
+            <Col className="pull-left" xs={3}>
+              <Image src={Denver} height="100%" width="100%" className="img-fluid img-ml-0 img-pl-0"></Image>
+              <Row>
+                <City cityName={cityNameFromCitiesInPlay} status={cityStatus} onClick={onCityClick} />
+              </Row>
+            </Col>
+          )
+          }
+          <Col></Col>
+
+        </Row>
+      </Container>
+
+
+
 
       <table>
 
@@ -187,7 +219,7 @@ const WeatherGame = (props) => {
 
 
 
-    </React.Fragment>
+    </React.Fragment >
 
   );
 }
@@ -202,7 +234,20 @@ function App() {
   const [weatherGameID, setWeatherGameID] = useState(1);
 
   return (
-    <WeatherGame key={weatherGameID} startNewGame={() => setWeatherGameID(weatherGameID + 1)} />
+
+    <React.Fragment>
+
+
+
+      {/*} <Button>Test Button</Button>
+
+      <Image src={Denver} height="20%" width="20%" className="img-fluid"></Image>
+  */}
+
+      <WeatherGame key={weatherGameID} startNewGame={() => setWeatherGameID(weatherGameID + 1)} />
+
+    </React.Fragment>
+
   );
 }
 
