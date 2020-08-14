@@ -70,7 +70,6 @@ import WashingtonDC from './Images/WashingtonDC.jpg'
 
 
 
-//<img src={Denver} alt="Denver Image" height={100} width={100} />
 
 
 const City = props => (
@@ -165,14 +164,20 @@ const WeatherGame = (props) => {
     <React.Fragment>
 
 
-      <div class="div">
+      {/*<div class="div">
         <p>On average, which city has more precipitation per year?</p>
 
       </div>
+  */}
 
+      <table class="table">
+        On average, which city has more precipitation per year?
+
+      </table>
 
 
       <table class="table">
+
 
         {utils.displayCitiesInPlay(citiesInPlay).map(cityNameFromCitiesInPlay =>
           <td>
