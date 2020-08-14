@@ -13,6 +13,9 @@ import Birmingham from './Images/Birmingham.jpg'
 import Boston from './Images/Boston.jpg'
 import Buffalo from './Images/Buffalo.jpg'
 import Denver from './Images/Denver.jpg'
+
+import Charlotte from './Images/Charlotte.jpg'
+
 import Chicago from './Images/Chicago.jpg'
 import Cincinnati from './Images/Cincinnati.jpg'
 
@@ -293,6 +296,9 @@ const cityFileNames = {
   "Boston, Massachusetts": Boston,
   "Buffalo, New York": Buffalo,
   "Denver, Colorado": Denver,
+
+  "Charlotte, North Carolina": Charlotte,
+
   "Chicago, Illinois": Chicago,
   "Cincinnati, Ohio": Cincinnati,
   "Cleveland, Ohio": Cleveland,
