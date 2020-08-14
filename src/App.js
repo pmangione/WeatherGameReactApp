@@ -113,10 +113,10 @@ const WeatherGame = (props) => {
 
   const correctOrIncorrectMessage = (selectedCity) => {
     if (selectedCity == utils.getCityWithHighestRainfall(citiesInPlay)) {
-      return 'You are correct!';
+      return 'YOU ARE CORRECT!';
     }
     else {
-      return 'Sorry, that is NOT correct!';
+      return 'SORRY, THAT IS NOT CORRECT!';
     }
 
   }
@@ -166,13 +166,6 @@ const WeatherGame = (props) => {
 
     <React.Fragment>
 
-
-      {/*<div class="div">
-        <p>On average, which city has more precipitation per year?</p>
-
-      </div>
-  */}
-
       <table class="table">
         On average, which city has more precipitation per year?
 
@@ -207,7 +200,7 @@ const WeatherGame = (props) => {
           <React.Fragment>
             <tr>
               <td>
-                {correctOrIncorrectMessage(selectedCity)}
+                <b> {correctOrIncorrectMessage(selectedCity)} </b>
               </td>
             </tr>
 
@@ -217,14 +210,10 @@ const WeatherGame = (props) => {
             )
             }
 
-
-
-
-
             {(gameStatus == 'active') ?
               <React.Fragment>
-                <tr><td>questions answered: {numberAnswered}</td></tr>
-                <tr><td>correct answers: {numberCorrectAnswered}</td></tr>
+                <tr><td><b>QUESTIONS ANSWERED: {numberAnswered}</b></td></tr>
+                <tr><td><b>CORRECT ANSWERS: {numberCorrectAnswered}</b></td></tr>
                 <tr><td><NextQuestion onClick={onNextQuestionClick} /></td></tr>
               </React.Fragment> : <b></b>
             }
@@ -238,8 +227,8 @@ const WeatherGame = (props) => {
 
         {gameStatus !== 'active' ?
           <React.Fragment>
-            <tr><td>GAME OVER!</td></tr>
-            <tr><td>Final Score </td></tr>
+            <tr><td><b><big>GAME OVER!</big></b></td></tr>
+            <tr><td>FINAL SCORE </td></tr>
 
             <tr><td>Correct answers: {numberCorrectAnswered}</td></tr>
 
