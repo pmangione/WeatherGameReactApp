@@ -227,16 +227,16 @@ const WeatherGame = (props) => {
 
         {gameStatus !== 'active' ?
           <React.Fragment>
-            <tr><td><b><big>GAME OVER!</big></b></td></tr>
-            <tr><td>FINAL SCORE </td></tr>
+            <tr><td><b><big><font color={{ colors: ['gameoverornextquestion'] }}>GAME OVER!</font></big></b></td></tr>
+            <tr><td><b>FINAL SCORE </b></td></tr>
 
-            <tr><td>Correct answers: {numberCorrectAnswered}</td></tr>
+            <tr><td><b>CORRECT ANSWERS: {numberCorrectAnswered}</b></td></tr>
 
-            <tr><td>Total questions: {numberAnswered}</td></tr>
+            <tr><td><b>TOTAL QUESTIONS: {numberAnswered}</b></td></tr>
 
-            <tr><td>Percentage Correct: {utils.percentage(numberCorrectAnswered, numberAnswered)}%</td></tr>
+            <tr><td><b>PERCENTAGE CORRECT: {utils.percentage(numberCorrectAnswered, numberAnswered)}%</b></td></tr>
 
-            <tr><td><PlayAgain onClick={props.startNewGame} /></td></tr>
+            <tr><td><b><PlayAgain onClick={props.startNewGame} /></b></td></tr>
           </React.Fragment>
           : <b></b>
         }
